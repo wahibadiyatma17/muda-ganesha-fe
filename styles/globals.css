@@ -3,3 +3,7 @@
 @tailwind utilities;
 
 @import url('https://fonts.cdnfonts.com/css/poppins');
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
