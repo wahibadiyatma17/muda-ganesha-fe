@@ -4,10 +4,12 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { CacheProvider } from '@chakra-ui/next-js';
 
 import theme from '@/styles/chakraStyle';
+import DefaultSEO from '../seo/config';
 
 function Providers({ children }: { children: React.ReactNode }) {
   return (
     <CacheProvider>
+      <DefaultSEO />
       <ChakraProvider theme={theme}>
         <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
       </ChakraProvider>
