@@ -5,17 +5,7 @@ import styled from '@emotion/styled';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
-interface RandomPictureType {
-  url: string;
-  position: {
-    left: number;
-    top: number;
-  } | null;
-}
-
 const ProfilePhotosSection: FC = () => {
-  const [pictures, setPictures] = useState<Array<RandomPictureType>>([]);
-
   const pictureUrls = [
     '/profile/profile-1.jpeg',
     '/profile/profile-2.jpeg',
@@ -48,76 +38,6 @@ const ProfilePhotosSection: FC = () => {
     '/profile/profile-4.jpeg',
     '/profile/profile-5.jpeg',
   ];
-  useEffect(() => {
-    // Function to arrange positions in a grid with a maximum number of pictures
-    const generateGridPositions = (
-      numPictures: number,
-      containerWidth: number,
-      containerHeight: number,
-      imageWidth: number,
-      imageHeight: number,
-      gap: number,
-    ) => {
-      const maxPicturesPerRow = Math.floor((containerWidth + gap) / (imageWidth + gap));
-      const numRows = Math.ceil(numPictures / maxPicturesPerRow);
-
-      const rowHeight = (containerHeight - (numRows - 1) * gap) / numRows;
-      const colWidth = (containerWidth - (maxPicturesPerRow - 1) * gap) / maxPicturesPerRow;
-
-      const positions: { left: number; top: number }[] = [];
-
-      for (let row = 0; row < numRows; row++) {
-        for (
-          let col = 0;
-          col < maxPicturesPerRow && row * maxPicturesPerRow + col < numPictures;
-          col++
-        ) {
-          const left = col * (colWidth + gap);
-          const top = row * (rowHeight + gap);
-          positions.push({ left, top });
-        }
-      }
-
-      return positions;
-    };
-
-    // Function to shuffle the array randomly
-    const shuffleArray = (array: RandomPictureType[]) => {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
-    };
-
-    const imageWidth = 64;
-    const imageHeight = 64;
-    const gap = 24;
-    const containerWidth = 600;
-    const containerHeight = 340;
-
-    const gridPositions = generateGridPositions(
-      pictureUrls.length,
-      containerWidth,
-      containerHeight,
-      imageWidth,
-      imageHeight,
-      gap,
-    );
-
-    const shuffledPictures: RandomPictureType[] = pictureUrls.map((url, index) => ({
-      url,
-      position: {
-        left: gridPositions[index].left - imageWidth / 2,
-        top: gridPositions[index].top - imageHeight / 2,
-      },
-    }));
-
-    shuffleArray(shuffledPictures);
-
-    setPictures(shuffledPictures);
-  }, []);
-
-  console.log('wahib pictures', pictures);
 
   return (
     <StyledProfilePhotosSection>

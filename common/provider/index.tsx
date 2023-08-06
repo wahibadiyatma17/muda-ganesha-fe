@@ -4,6 +4,8 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { CacheProvider } from '@chakra-ui/next-js';
 
 import theme from '@/styles/chakraStyle';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import DefaultSEO from '../seo/config';
 
 function Providers({ children }: { children: React.ReactNode }) {
