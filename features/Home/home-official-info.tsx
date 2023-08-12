@@ -13,12 +13,12 @@ const HomeOfficialInfo: FC = () => {
   return (
     <StyledHomeOfficalInfo>
       <div className="official-info__container">
-        <div tw="flex items-center justify-between">
+        <div className="flex items-center justify-between">
           <h3>Official Info</h3>
-          <button className="official-info__button-black">
+          <CarouselHeaderButton>
             {!isMobile && <span>Lihat Semua</span>}
             <HiOutlineArrowNarrowRight />
-          </button>
+          </CarouselHeaderButton>
         </div>
 
         <div className="official-info__main-banner">
@@ -192,5 +192,33 @@ const StyledHomeOfficalInfo = styled.div`
         line-height: 30px;
       }
     }
+  }
+`;
+
+export const CarouselHeaderButton = styled.button`
+  background: #ffffff;
+  border-radius: 8px;
+  width: 32px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  border: 1px solid #fff;
+
+  @media (min-width: 768px) {
+    background: #121317;
+    border-radius: 100px;
+    width: 185px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 27px;
+    color: #ffffff;
   }
 `;
