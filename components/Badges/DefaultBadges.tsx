@@ -36,12 +36,7 @@ const StyledBadges = styled.div<Pick<BadgesProps, 'variant'>>`
     font-weight: 700;
     font-size: 5px;
     line-height: 7px;
-    color: ${(props) =>
-      props.variant === 'primary'
-        ? '#ffffff'
-        : props.variant === 'secondary'
-        ? '#121317'
-        : '#D9D9D9'};
+    color: ${(props) => (props.variant === 'primary' ? '#ffffff' : '#121317')};
   }
 
   @media (min-width: 768px) {
@@ -61,12 +56,6 @@ const StyledBadges = styled.div<Pick<BadgesProps, 'variant'>>`
       font-weight: 700;
       font-size: 16px;
       line-height: 22px;
-      color: ${(props) =>
-        props.variant === 'primary'
-          ? '#ffffff'
-          : props.variant === 'secondary'
-          ? '#121317'
-          : '#D9D9D9'};
     }
   }
 `;
