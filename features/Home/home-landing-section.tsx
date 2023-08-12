@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { Button } from '@chakra-ui/react';
 import { ArrowForwardIcon } from '@chakra-ui/icons';
 import { useWindowSize } from '@/utils';
-import ProfilePhotosSection from './component/profile-photos-section';
+import ProfilePhotosSection from './component/ProfilePhotosSection';
 
 const HomeLandingSection: FC = () => {
   const size = useWindowSize();
