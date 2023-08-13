@@ -7,6 +7,7 @@ import { HiOutlineArrowNarrowRight } from 'react-icons/hi';
 import { useWindowSize } from '@/utils';
 import Image from 'next/image';
 import Badges from '@/components/Badges/DefaultBadges';
+import OfficialInfoCarousel from '@/components/Carousel/OfficialInfoCarousel';
 
 const HomeRecentPostSection: FC = () => {
   const isMobile = useWindowSize().width < 768;
@@ -40,6 +41,10 @@ const HomeRecentPostSection: FC = () => {
             <h2>Hutan Jabon “Wana Muda Ganesha”</h2>
             <Badges variant="tertiary">oleh MG 1980</Badges>
           </div>
+        </div>
+
+        <div className="carousel__container">
+          <OfficialInfoCarousel />
         </div>
       </div>
     </StyledHomeRecentPost>
@@ -115,6 +120,10 @@ const StyledHomeRecentPost = styled.section`
       font-size: 8px;
       line-height: 12px;
     }
+  }
+
+  .carousel__container {
+    max-width: 100%;
   }
 
   @media (min-width: 768px) {
