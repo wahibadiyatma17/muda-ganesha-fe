@@ -32,7 +32,7 @@ const Footer = () => {
         <div className="flex flex-col space-y-2 w-full md:w-[25rem]">
           <h3 className="font-bold text-base text-[#443E3E] mb-2">Sosmed MG</h3>
           {SOCIAL_MEDIA_MG.map((socialMedia: BaseFooterMenuProps, index: number) => (
-            <a href={socialMedia.url} target={'_blank'}>
+            <a href={socialMedia.url} target={'_blank'} key={index}>
               <p className="text-xs text-[#8F8F8F]">{socialMedia.name}</p>
             </a>
           ))}
@@ -41,7 +41,7 @@ const Footer = () => {
         <div className="flex flex-col space-y-2 w-full md:w-[30rem]">
           <h3 className="font-bold text-base text-[#443E3E] mb-2">Tentang MG</h3>
           {ABOUT_MG.map((socialMedia: BaseFooterMenuProps, index: number) => (
-            <a href={socialMedia.url} target={'_blank'}>
+            <a href={socialMedia.url} target={'_blank'} key={index}>
               <p className="text-xs text-[#8F8F8F]">{socialMedia.name}</p>
             </a>
           ))}
@@ -50,7 +50,7 @@ const Footer = () => {
         <div className="flex flex-col space-y-2 w-full md:w-[30rem]">
           <h3 className="font-bold text-base text-[#443E3E] mb-2">Jelajah Portal</h3>
           {PAGES_LIST_MG.map((socialMedia: BaseFooterMenuProps, index: number) => (
-            <a href={socialMedia.url} target={'_blank'}>
+            <a href={socialMedia.url} target={'_blank'} key={index}>
               <p className="text-xs text-[#8F8F8F]">{socialMedia.name}</p>
             </a>
           ))}
@@ -64,11 +64,12 @@ const Footer = () => {
         </div>
         <div className="flex space-x-[10px] w-full lg:w-[25rem] lg:justify-end">
           {BUAT_BESOK_ICON_LIST.map((icon: BaseFooterMenuProps, index: number) => (
-            <img
+            <Image
               key={index}
-              src={icon.iconUrl}
-              width={index === 0 ? '52px' : '16px'}
-              height={'16px'}
+              src={icon.iconUrl!}
+              width={index === 0 ? 52 : 16}
+              height={16}
+              alt="icon"
             />
           ))}
         </div>

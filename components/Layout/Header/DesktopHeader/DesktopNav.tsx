@@ -19,7 +19,9 @@ const DesktopNav: FC = () => {
       </div>
 
       <InputGroup>
-        <InputLeftElement pointerEvents="none" children={<Search2Icon color="gray.300" />} />
+        <InputLeftElement pointerEvents="none">
+          <Search2Icon color="gray.300" />
+        </InputLeftElement>
         <Input
           type="tel"
           placeholder="Cari relasi atau info lain ..."
