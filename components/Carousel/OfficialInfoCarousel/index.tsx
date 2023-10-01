@@ -32,7 +32,7 @@ const OfficialInfoCarousel: FC = () => {
         <div className="flex flex-row mt-3 slick-dots" style={{ position: 'inherit' }}>
           {dots}
         </div>
-        <div className="flex flex-row items-center mt-2 md:mt-0 gap-2 md:gap-3 md:max-w-[300px] ">
+        <div className="flex-row items-center mt-2 hidden sm:flex md:mt-0 gap-2 md:gap-3 md:max-w-[300px] ">
           <CarouselButton variant="prev" onClick={() => sliderRef?.slickPrev()} />
           <CarouselButton variant="next" onClick={() => sliderRef?.slickNext()} />
         </div>

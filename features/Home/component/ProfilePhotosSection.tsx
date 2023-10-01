@@ -1,9 +1,10 @@
 'use client';
 
-import React, { FC, useState, useEffect } from 'react';
+import React, { FC, useState, useEffect, useMemo } from 'react';
 import styled from '@emotion/styled';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { useWindowSize } from '@/utils';
 
 const ProfilePhotosSection: FC = () => {
   const pictureUrls = [
@@ -39,9 +40,15 @@ const ProfilePhotosSection: FC = () => {
     '/profile/profile-5.jpeg',
   ];
 
+  const isMobile = useWindowSize().width < 1024;
+  const picturesURLS = useMemo(
+    () => (isMobile ? pictureUrls.slice(1, 16) : pictureUrls),
+    [isMobile],
+  );
+
   return (
     <StyledProfilePhotosSection>
-      {pictureUrls.map((imgUrl: string, idx: number) => (
+      {picturesURLS.map((imgUrl: string, idx: number) => (
         <div
           style={{
             gridColumn: idx % 2 === 0 ? 'span 1 / span 1' : 'auto',
@@ -67,11 +74,18 @@ export default ProfilePhotosSection;
 
 const StyledProfilePhotosSection = styled.div`
   position: relative;
-  max-height: 340px;
-  height: 340px;
+  max-height: 400px;
+  height: 400px;
   width: 100%;
-  //   gap: 36px;
-
   display: grid;
-  grid-template-columns: repeat(10, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    height: 340px;
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+  }
 `;

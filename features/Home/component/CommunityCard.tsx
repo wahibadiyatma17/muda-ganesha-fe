@@ -89,7 +89,7 @@ export default CommunityCard;
 const StyledCommunityCard = styled.div`
   height: 216px;
   max-height: 216px;
-  width: 416px;
+  width: 100%;
 
   display: flex;
   flex-direction: column;
@@ -181,6 +181,10 @@ const StyledCommunityCard = styled.div`
         }
       }
     }
+  }
+
+  @media (min-width: 768px) {
+    width: 416px;
   }
 `;
 

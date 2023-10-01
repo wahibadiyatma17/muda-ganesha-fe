@@ -17,13 +17,19 @@ export default HomeCommunitySection;
 
 const StyledHomeCommunitySection = styled.section`
   display: flex;
-  flex-direction: row;
-  gap: 2rem;
+  flex-direction: column;
+  gap: 1.5rem;
   algin-items: center;
   justify-content: center;
-  padding: 32px;
+  padding: 16px;
   max-width: 1366px;
   margin: 0 auto;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    padding: 32px;
+    gap: 2rem;
+  }
 `;
 
 const DUMMY_COMMUNITY_DATA = [

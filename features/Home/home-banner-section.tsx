@@ -36,12 +36,13 @@ export default HomeBannerSection;
 
 const StyledHomeBannerSection = styled.section`
   max-width: 1366px;
-  margin: 0 auto;
   padding: 40px 0px;
 
   display: flex;
   align-items: center;
   justify-content: center;
+
+  margin: 0px 16px;
 
   .banner__container {
     display: flex;
@@ -62,5 +63,9 @@ const StyledHomeBannerSection = styled.section`
       font-weight: 600;
       line-height: 46px;
     }
+  }
+
+  @media (min-width: 768px) {
+    margin: 0 auto;
   }
 `;

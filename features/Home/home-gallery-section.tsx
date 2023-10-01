@@ -99,6 +99,7 @@ export default HomeGallerySection;
 const StyledGallerySection = styled.section`
   background: #121317;
   width: 100%;
+  padding: 0px 16px;
 
   .home-gallery__container {
     flex-direction: column;

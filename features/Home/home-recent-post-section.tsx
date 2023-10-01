@@ -54,7 +54,7 @@ const HomeRecentPostSection: FC = () => {
 export default HomeRecentPostSection;
 
 const StyledHomeRecentPost = styled.section`
-  padding: 40px 88px 24px 88px;
+  padding: 20px;
   background: #121317;
 
   .recent-post__container {
@@ -127,6 +127,8 @@ const StyledHomeRecentPost = styled.section`
   }
 
   @media (min-width: 768px) {
+    padding: 40px 88px 24px 88px;
+
     .official-info__main-banner {
       width: 100%;
       height: 432px;

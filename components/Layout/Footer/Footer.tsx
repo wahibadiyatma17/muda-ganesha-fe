@@ -8,10 +8,11 @@ import {
   PAGES_LIST_MG,
   SOCIAL_MEDIA_MG,
 } from '@/constants/footer';
+import Maps from '@/features/Home/component/Maps';
 
 const Footer = () => {
   return (
-    <div className="flex flex-col h-[956px] bg-[#F5F5F5] lg:h-[300px]">
+    <div className="flex flex-col h-[max-content] bg-[#F5F5F5] pb-10">
       <div className="flex flex-col lg:flex-row w-full px-4 pt-4  space-y-5  lg:space-y-0 lg:space-x-[185px] lg:px-[88px]) ">
         <div className="flex flex-col w-full py-2 space-y-3">
           <div className="flex space-x-1 items-center">
@@ -24,9 +25,8 @@ const Footer = () => {
             Kampus ITB - Gd. CRCS (Center for Research and Community Service) Lt. 7 Jl. Ganesha no.
             10, Bandung
           </p>
-          <div className="w-[346px] h-[90px] relative">
-            <Image src="/homepage/image-maps.png" fill style={{ objectFit: 'cover' }} alt="maps" />
-          </div>
+
+          <Maps longitude={109.99366845577752} latitude={-7.722001758733146} />
         </div>
 
         <div className="flex flex-col space-y-2 w-full md:w-[25rem]">
@@ -58,7 +58,7 @@ const Footer = () => {
         <p className="text-xs text-[#8F8F8F] mt-1 lg:hidden">©2022 Muda Ganesha</p>
       </div>
       <div className="w-full h-[0.5px] bg-[#8F8F8F] my-2 lg:my-4" />
-      <div className="px-4 lg:px-[88px] space-y-2 flex flex-col lg:flex-row w-full lg:justify-between">
+      <div className="px-4  space-y-2 flex flex-col lg:flex-row w-full lg:justify-between ">
         <div className="text-xs text-[#8F8F8F] lg:w-[25rem]">
           by Buat Besok & MG Team | Collab | Products
         </div>
